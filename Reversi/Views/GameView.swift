@@ -52,7 +52,7 @@ struct GameView: View {
                                 .foregroundStyle(.red)
                         case .Black:
                             BoldText("чёрного")
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.blackPlayer)
                         }
                     }
                 }
@@ -72,7 +72,7 @@ struct GameView: View {
                 case .Red:
                     WinnerText("красный", .red)
                 case .Black:
-                    WinnerText("черный", .black)
+                    WinnerText("черный", .blackPlayer)
                 case .Draw:
                     BoldText("Ниья!")
                 }
@@ -80,7 +80,7 @@ struct GameView: View {
             HStack {
                 let (red, black) = board.countRedAndBlack()
                 cellsCounter(red, .red)
-                cellsCounter(black, .black)
+                cellsCounter(black, .blackPlayer)
             }
         }
         .padding()
